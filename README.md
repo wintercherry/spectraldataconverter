@@ -8,7 +8,7 @@ Unconverted Data
 
 The unconverted data format looks like this:
 
-	<column-name><whitespace>+<integer><whitespace>+<integer><whitespace>+<integer><whitespace>+<integer><whitespace>+<integer>
+	<channel-name><whitespace>+<integer><whitespace>+<integer><whitespace>+<integer><whitespace>+<integer><whitespace>+<integer>
 	
 A sample:
 
