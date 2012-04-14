@@ -5,8 +5,17 @@ if ARGV.length != 2
   exit 1
 end
 
-inFile = File.new(ARGV[0])
-outFile = File.new(ARGV[1], "w")
+inFileName = ARGV[0]
+outFileName = ARGV[1]
+outFileOptions = "w"
+
+unless File.exists?(inFileName) and File.file?(inFileName)
+  puts "Error: specified input file does not exist or is inaccessible."
+  exit 2
+end
+
+inFile = File.new(inFileName)
+outFile = File.new(outFileName, outFileOptions)
 
 begin
   currentColumn = 1
