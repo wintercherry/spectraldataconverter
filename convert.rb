@@ -1,5 +1,13 @@
-outFile = File.new("converted.dat", "w")
-inFile = File.new("unconverted.dat")
+require 'getoptlong'
+
+if ARGV.length != 2
+  puts "Usage: <command> <input-file> <output-file>"
+  exit 1
+end
+
+inFile = File.new(ARGV[0])
+outFile = File.new(ARGV[1], "w")
+
 begin
   currentColumn = 1
   while (line = inFile.readline)
