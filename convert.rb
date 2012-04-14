@@ -1,12 +1,11 @@
-require 'getoptlong'
-
-if ARGV.length != 2
-  puts "Usage: <command> <input-file> <output-file>"
+if ARGV.length == 0
+  puts "Usage: <command> <input-file> [output-file]\n"
+  puts "If output-file is specified, the converted data is written out to it. By default, data is written to a file named <input-file>.converted"
   exit 1
 end
 
 inFileName = ARGV[0]
-outFileName = ARGV[1]
+outFileName = if ARGV.length > 1 then ARGV[1] else inFileName + ".converted" end
 outFileOptions = "w"
 
 unless File.exists?(inFileName) and File.file?(inFileName)
